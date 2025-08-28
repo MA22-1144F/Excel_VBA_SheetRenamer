@@ -1,7 +1,7 @@
 # Excel_VBA_SheetRenamer
 
 ## 概要
-VBAを利用してExcelのSheet名を一括変更できます。  
+ExcelのSheet名を一括変更できます。  
 PERSONAL.XLSBに保存して動作させることを想定しています。  
 <img src="image.png" alt="ユーザーフォーム画面" width="400">
 
