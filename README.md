@@ -22,7 +22,7 @@ Microsoft Excel上で動作します。
 11. Excel WorkSheetに戻り、設定したマクロのアイコンを選択して起動
 
 ## 機能
-* Sheet一覧の取得
+* Sheet一覧の取得  
   開いているBook内の全Sheetをリスト表示し、対称を選択可能
 
 
