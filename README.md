@@ -8,7 +8,7 @@ PERSONAL.XLSBに保存して動作させることを想定しています。
 ## 動作環境
 Microsoft Excel上で動作します。  
 
-## 使い方
+## インストール方法
 1. Contentsフォルダ内のUserForm_SheetRenamer.frm、UserForm_SheetRenamer.frx、シート名一括変更.basを任意の同一フォルダに保存
 2. Excelで新規WorkSheetを開く
 3. 開発タブのVisual BasicまたはAlt+F11でVBE(Visual Basic Editor)を開く
