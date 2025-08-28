@@ -21,8 +21,14 @@ Microsoft Excel上で動作します。
 10. お好みで名前やアイコンを変更
 11. Excel WorkSheetに戻り、設定したマクロのアイコンを選択して起動
 
+## 機能
+* Sheet一覧の取得
+  開いているBook内の全Sheetをリスト表示し、対称を選択可能
+
+
+
 ## 連絡先
 [Instagram](https://www.instagram.com/nattotoasto?igsh=NWNtdHhnY3A4NDQ0 "nattotoasto")
 
 ## ライセンス
-MIT
+MIT License
