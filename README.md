@@ -23,9 +23,17 @@ Microsoft Excel上で動作します。
 
 ## 機能
 * Sheet一覧の取得  
-  開いているBook内の全Sheetをリスト表示し、対称を選択可能
+  開いているBook内の全Sheetをリスト表示し、対称を選択可能  
 
+* 名称変更方式の選択  
+  * 検索・置換：指定文字列を一括置換  
+  * プレフィックス追加：Sheet名の先頭に文字列を追加  
+  * サフィックス追加：Sheet名の末尾に文字列を追加  
+  * 連番付与：連番を自動生成してシート名に付加（桁数・開始番号・増分・位置を指定可能）  
+  * 個別指定：各Sheetごとに新しい名前を入力  
 
+* プレビュー機能  
+  変更内容を実行前に確認可能
 
 ## 連絡先
 [Instagram](https://www.instagram.com/nattotoasto?igsh=NWNtdHhnY3A4NDQ0 "nattotoasto")
