@@ -3,7 +3,7 @@
 ## 概要
 VBAを利用してExcelのSheet名を一括変更できます。
 PERSONAL.XLSBに保存して動作させることを想定しています。
-![ユーザーフォーム画面](image.png)
+<img src="image.png" alt="ユーザーフォーム画面" width="400">
 
 ## 動作環境
 Microsoft Excel上で動作します。  
