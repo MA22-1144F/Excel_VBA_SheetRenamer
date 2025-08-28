@@ -1,35 +1,35 @@
 VERSION 5.00
 Begin {C62A69F0-16DC-11CE-9E98-00AA00574A4F} UserForm_SheetRenamer 
-   Caption         =   "ƒV[ƒg–¼ˆêŠ‡•ÏXƒc[ƒ‹"
+   Caption         =   "ã‚·ãƒ¼ãƒˆåä¸€æ‹¬å¤‰æ›´ãƒ„ãƒ¼ãƒ«"
    ClientHeight    =   5550
    ClientLeft      =   120
    ClientTop       =   465
    ClientWidth     =   10935
    OleObjectBlob   =   "UserForm_SheetRenamer.frx":0000
-   StartUpPosition =   1  'ƒI[ƒi[ ƒtƒH[ƒ€‚Ì’†‰›
+   StartUpPosition =   1  'ã‚ªãƒ¼ãƒŠãƒ¼ ãƒ•ã‚©ãƒ¼ãƒ ã®ä¸­å¤®
 End
 Attribute VB_Name = "UserForm_SheetRenamer"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-' ƒ‚ƒWƒ…[ƒ‹ƒŒƒxƒ‹•Ï”i˜A”ÔŠÇ——pj
+' ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ãƒ¬ãƒ™ãƒ«å¤‰æ•°ï¼ˆé€£ç•ªç®¡ç†ç”¨ï¼‰
 Private sequenceCounter As Integer
 
 Private Sub UserForm_Initialize()
-    ' ƒtƒH[ƒ€‰Šú‰»
-    Me.caption = "ƒV[ƒg–¼ˆêŠ‡•ÏXƒc[ƒ‹"
+    ' ãƒ•ã‚©ãƒ¼ãƒ åˆæœŸåŒ–
+    Me.caption = "ã‚·ãƒ¼ãƒˆåä¸€æ‹¬å¤‰æ›´ãƒ„ãƒ¼ãƒ«"
     
-    ' ƒV[ƒgˆê——‚ğ“Ç‚İ‚İ
+    ' ã‚·ãƒ¼ãƒˆä¸€è¦§ã‚’èª­ã¿è¾¼ã¿
     Call LoadSheetList
     
-    ' ƒfƒtƒHƒ‹ƒgİ’è
+    ' ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆè¨­å®š
     optSequence.value = True
     Call UpdateInterface
 End Sub
 
 Private Sub LoadSheetList()
-    ' Œ»İ‚Ìƒ[ƒNƒuƒbƒN‚ÌƒV[ƒgˆê——‚ğ“Ç‚İ‚İ
+    ' ç¾åœ¨ã®ãƒ¯ãƒ¼ã‚¯ãƒ–ãƒƒã‚¯ã®ã‚·ãƒ¼ãƒˆä¸€è¦§ã‚’èª­ã¿è¾¼ã¿
     Dim ws As Worksheet
     lstSheets.Clear
     
@@ -37,7 +37,7 @@ Private Sub LoadSheetList()
         lstSheets.AddItem ws.Name
     Next ws
     
-    ' ‘S‘I‘ğƒ`ƒFƒbƒNƒ{ƒbƒNƒX‚Ì‰Šúó‘Ô
+    ' å…¨é¸æŠãƒã‚§ãƒƒã‚¯ãƒœãƒƒã‚¯ã‚¹ã®åˆæœŸçŠ¶æ…‹
     chkSelectAll.value = True
     Call chkSelectAll_Click
 End Sub
@@ -63,9 +63,9 @@ Private Sub optSequence_Click()
 End Sub
 
 Private Sub UpdateInterface()
-    ' ‘I‘ğ‚³‚ê‚½•ÏX•û–@‚É‰‚¶‚ÄƒCƒ“ƒ^[ƒtƒF[ƒX‚ğXV
+    ' é¸æŠã•ã‚ŒãŸå¤‰æ›´æ–¹æ³•ã«å¿œã˜ã¦ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã‚’æ›´æ–°
     
-    ' ‘S‚Ä”ñ•\¦‚É‚µ‚Ä‚©‚çƒŠƒZƒbƒg
+    ' å…¨ã¦éè¡¨ç¤ºã«ã—ã¦ã‹ã‚‰ãƒªã‚»ãƒƒãƒˆ
     lblFind.Visible = False
     txtFind.Visible = False
     lblReplace.Visible = False
@@ -75,45 +75,45 @@ Private Sub UpdateInterface()
     lblSuffix.Visible = False
     txtSuffix.Visible = False
     
-    ' ˜A”ÔŠÖ˜AƒRƒ“ƒgƒ[ƒ‹i‘¶İ‚·‚éê‡‚Ì‚İj
+    ' é€£ç•ªé–¢é€£ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ï¼ˆå­˜åœ¨ã™ã‚‹å ´åˆã®ã¿ï¼‰
     Call HideSequenceControls
     
     If optIndividual.value Then
-        ' ŒÂ•Êw’èƒ‚[ƒh
-        lblInstruction.caption = "•ÏX‚µ‚½‚¢ƒV[ƒg‚ğ‘I‘ğ‚µ‚ÄAƒvƒŒƒrƒ…[‚ÅV‚µ‚¢–¼‘O‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢"
+        ' å€‹åˆ¥æŒ‡å®šãƒ¢ãƒ¼ãƒ‰
+        lblInstruction.caption = "å¤‰æ›´ã—ãŸã„ã‚·ãƒ¼ãƒˆã‚’é¸æŠã—ã¦ã€ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ã§æ–°ã—ã„åå‰ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„"
         
     ElseIf optReplace.value Then
-        ' ’uŠ·ƒ‚[ƒh
+        ' ç½®æ›ãƒ¢ãƒ¼ãƒ‰
         lblFind.Visible = True
         txtFind.Visible = True
         lblReplace.Visible = True
         txtReplace.Visible = True
-        lblInstruction.caption = "’uŠ·‚µ‚½‚¢•¶š—ñ‚ÆV‚µ‚¢•¶š—ñ‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢"
+        lblInstruction.caption = "ç½®æ›ã—ãŸã„æ–‡å­—åˆ—ã¨æ–°ã—ã„æ–‡å­—åˆ—ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„"
         
     ElseIf optPrefix.value Then
-        ' ƒvƒŒƒtƒBƒbƒNƒX’Ç‰Áƒ‚[ƒh
+        ' ãƒ—ãƒ¬ãƒ•ã‚£ãƒƒã‚¯ã‚¹è¿½åŠ ãƒ¢ãƒ¼ãƒ‰
         lblPrefix.Visible = True
         txtPrefix.Visible = True
-        lblInstruction.caption = "ƒV[ƒg–¼‚Ìæ“ª‚É’Ç‰Á‚·‚é•¶š—ñ‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢"
+        lblInstruction.caption = "ã‚·ãƒ¼ãƒˆåã®å…ˆé ­ã«è¿½åŠ ã™ã‚‹æ–‡å­—åˆ—ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„"
         
     ElseIf optSuffix.value Then
-        ' ƒTƒtƒBƒbƒNƒX’Ç‰Áƒ‚[ƒh
+        ' ã‚µãƒ•ã‚£ãƒƒã‚¯ã‚¹è¿½åŠ ãƒ¢ãƒ¼ãƒ‰
         lblSuffix.Visible = True
         txtSuffix.Visible = True
-        lblInstruction.caption = "ƒV[ƒg–¼‚Ì––”ö‚É’Ç‰Á‚·‚é•¶š—ñ‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢"
+        lblInstruction.caption = "ã‚·ãƒ¼ãƒˆåã®æœ«å°¾ã«è¿½åŠ ã™ã‚‹æ–‡å­—åˆ—ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„"
         
     ElseIf ControlExists("optSequence") And optSequence.value Then
-        ' ˜A”Ôƒ‚[ƒhiƒRƒ“ƒgƒ[ƒ‹‚ª‘¶İ‚·‚éê‡‚Ì‚İj
+        ' é€£ç•ªãƒ¢ãƒ¼ãƒ‰ï¼ˆã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ãŒå­˜åœ¨ã™ã‚‹å ´åˆã®ã¿ï¼‰
         Call ShowSequenceControls
-        lblInstruction.caption = "˜A”Ô‚Ìí—ŞAˆÊ’uAŠJn”Ô†‚ğİ’è‚µ‚Ä‚­‚¾‚³‚¢"
+        lblInstruction.caption = "é€£ç•ªã®ç¨®é¡ã€ä½ç½®ã€é–‹å§‹ç•ªå·ã‚’è¨­å®šã—ã¦ãã ã•ã„"
         
-        ' ˜A”ÔƒRƒ“ƒgƒ[ƒ‹‚Ì‰Šú‰»
+        ' é€£ç•ªã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã®åˆæœŸåŒ–
         Call InitializeSequenceControls
     End If
 End Sub
 
 Private Function ControlExists(controlName As String) As Boolean
-    ' ƒtƒH[ƒ€ã‚ÉƒRƒ“ƒgƒ[ƒ‹‚ª‘¶İ‚·‚é‚©ƒ`ƒFƒbƒN
+    ' ãƒ•ã‚©ãƒ¼ãƒ ä¸Šã«ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ãŒå­˜åœ¨ã™ã‚‹ã‹ãƒã‚§ãƒƒã‚¯
     On Error Resume Next
     Dim ctrl As Control
     Set ctrl = Me.Controls(controlName)
@@ -122,7 +122,7 @@ Private Function ControlExists(controlName As String) As Boolean
 End Function
 
 Private Sub HideSequenceControls()
-    ' ˜A”ÔŠÖ˜AƒRƒ“ƒgƒ[ƒ‹‚ğ”ñ•\¦i‘¶İ‚·‚éê‡‚Ì‚İj
+    ' é€£ç•ªé–¢é€£ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã‚’éè¡¨ç¤ºï¼ˆå­˜åœ¨ã™ã‚‹å ´åˆã®ã¿ï¼‰
     If ControlExists("lblSequenceType") Then lblSequenceType.Visible = False
     If ControlExists("cmbSequenceType") Then cmbSequenceType.Visible = False
     If ControlExists("lblSequencePosition") Then lblSequencePosition.Visible = False
@@ -136,7 +136,7 @@ Private Sub HideSequenceControls()
 End Sub
 
 Private Sub ShowSequenceControls()
-    ' ˜A”ÔŠÖ˜AƒRƒ“ƒgƒ[ƒ‹‚ğ•\¦i‘¶İ‚·‚éê‡‚Ì‚İj
+    ' é€£ç•ªé–¢é€£ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã‚’è¡¨ç¤ºï¼ˆå­˜åœ¨ã™ã‚‹å ´åˆã®ã¿ï¼‰
     If ControlExists("lblSequenceType") Then lblSequenceType.Visible = True
     If ControlExists("cmbSequenceType") Then cmbSequenceType.Visible = True
     If ControlExists("lblSequencePosition") Then lblSequencePosition.Visible = True
@@ -150,7 +150,7 @@ Private Sub ShowSequenceControls()
 End Sub
 
 Private Sub chkSelectAll_Click()
-    ' ‘S‘I‘ğ/‘S‰ğœ
+    ' å…¨é¸æŠ/å…¨è§£é™¤
     Dim i As Integer
     For i = 0 To lstSheets.ListCount - 1
         lstSheets.Selected(i) = chkSelectAll.value
@@ -158,19 +158,19 @@ Private Sub chkSelectAll_Click()
 End Sub
 
 Private Sub btnPreview_Click()
-    ' ƒvƒŒƒrƒ…[‚ğ¶¬
+    ' ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ã‚’ç”Ÿæˆ
     Call GeneratePreview
 End Sub
 
 Private Sub GeneratePreview()
-    ' ‘I‘ğ‚³‚ê‚½•ÏX•û–@‚ÉŠî‚Ã‚¢‚ÄƒvƒŒƒrƒ…[‚ğ¶¬
+    ' é¸æŠã•ã‚ŒãŸå¤‰æ›´æ–¹æ³•ã«åŸºã¥ã„ã¦ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ã‚’ç”Ÿæˆ
     Dim i As Integer
     Dim oldName As String
     Dim newName As String
     
     lstPreview.Clear
     
-    ' ˜A”Ôƒ‚[ƒh‚Ìê‡AƒJƒEƒ“ƒ^[‚ğƒŠƒZƒbƒg
+    ' é€£ç•ªãƒ¢ãƒ¼ãƒ‰ã®å ´åˆã€ã‚«ã‚¦ãƒ³ã‚¿ãƒ¼ã‚’ãƒªã‚»ãƒƒãƒˆ
     If ControlExists("optSequence") And optSequence.value Then
         Call ResetSequenceCounter
     End If
@@ -180,75 +180,75 @@ Private Sub GeneratePreview()
             oldName = lstSheets.List(i)
             newName = GetNewSheetName(oldName)
             
-            ' ƒvƒŒƒrƒ…[•\¦ (‹Œ–¼ ¨ V–¼)
-            lstPreview.AddItem oldName & " ¨ " & newName
+            ' ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼è¡¨ç¤º (æ—§å â†’ æ–°å)
+            lstPreview.AddItem oldName & " â†’ " & newName
         End If
     Next i
     
-    ' ŒÂ•Êw’èƒ‚[ƒh‚Ìê‡AƒvƒŒƒrƒ…[ƒŠƒXƒg‚ğ•ÒW‰Â”\‚É‚·‚é
+    ' å€‹åˆ¥æŒ‡å®šãƒ¢ãƒ¼ãƒ‰ã®å ´åˆã€ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ãƒªã‚¹ãƒˆã‚’ç·¨é›†å¯èƒ½ã«ã™ã‚‹
     If optIndividual.value Then
         Call EnableIndividualEdit
     End If
 End Sub
 
 Private Sub ResetSequenceCounter()
-    ' ˜A”ÔƒJƒEƒ“ƒ^[‚ğƒŠƒZƒbƒg
-    sequenceCounter = 1 ' ƒ‚ƒWƒ…[ƒ‹ƒŒƒxƒ‹•Ï”‚ğ1‚ÉƒŠƒZƒbƒg
+    ' é€£ç•ªã‚«ã‚¦ãƒ³ã‚¿ãƒ¼ã‚’ãƒªã‚»ãƒƒãƒˆ
+    sequenceCounter = 1 ' ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ãƒ¬ãƒ™ãƒ«å¤‰æ•°ã‚’1ã«ãƒªã‚»ãƒƒãƒˆ
 End Sub
 
 Private Sub InitializeSequenceControls()
-    ' ˜A”ÔƒRƒ“ƒgƒ[ƒ‹‚Ì‰Šú‰»i‘¶İ‚·‚éê‡‚Ì‚İj
+    ' é€£ç•ªã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã®åˆæœŸåŒ–ï¼ˆå­˜åœ¨ã™ã‚‹å ´åˆã®ã¿ï¼‰
     
     If ControlExists("cmbSequenceType") Then
-        ' ˜A”Ôƒ^ƒCƒv‚Ìİ’è
+        ' é€£ç•ªã‚¿ã‚¤ãƒ—ã®è¨­å®š
         cmbSequenceType.Clear
-        cmbSequenceType.AddItem "”š (1, 2, 3...)"
-        cmbSequenceType.AddItem "”šƒ[ƒƒpƒfƒBƒ“ƒO (01, 02, 03...)"
-        cmbSequenceType.AddItem "¬•¶šƒAƒ‹ƒtƒ@ƒxƒbƒg (a, b, c...)"
-        cmbSequenceType.AddItem "‘å•¶šƒAƒ‹ƒtƒ@ƒxƒbƒg (A, B, C...)"
-        cmbSequenceType.ListIndex = 1 ' ƒfƒtƒHƒ‹ƒg‚Íƒ[ƒƒpƒfƒBƒ“ƒO
+        cmbSequenceType.AddItem "æ•°å­— (1, 2, 3...)"
+        cmbSequenceType.AddItem "æ•°å­—ã‚¼ãƒ­ãƒ‘ãƒ‡ã‚£ãƒ³ã‚° (01, 02, 03...)"
+        cmbSequenceType.AddItem "å°æ–‡å­—ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆ (a, b, c...)"
+        cmbSequenceType.AddItem "å¤§æ–‡å­—ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆ (A, B, C...)"
+        cmbSequenceType.ListIndex = 1 ' ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ã‚¼ãƒ­ãƒ‘ãƒ‡ã‚£ãƒ³ã‚°
     End If
     
     If ControlExists("cmbSequencePosition") Then
-        ' ˜A”ÔˆÊ’u‚Ìİ’è
+        ' é€£ç•ªä½ç½®ã®è¨­å®š
         cmbSequencePosition.Clear
-        cmbSequencePosition.AddItem "ƒvƒŒƒtƒBƒbƒNƒXiæ“ªj"
-        cmbSequencePosition.AddItem "ƒTƒtƒBƒbƒNƒXi––”öj"
-        cmbSequencePosition.AddItem "’uŠ·iŠ®‘S’uŠ·j"
-        cmbSequencePosition.ListIndex = 0 ' ƒfƒtƒHƒ‹ƒg‚ÍƒvƒŒƒtƒBƒbƒNƒX
+        cmbSequencePosition.AddItem "ãƒ—ãƒ¬ãƒ•ã‚£ãƒƒã‚¯ã‚¹ï¼ˆå…ˆé ­ï¼‰"
+        cmbSequencePosition.AddItem "ã‚µãƒ•ã‚£ãƒƒã‚¯ã‚¹ï¼ˆæœ«å°¾ï¼‰"
+        cmbSequencePosition.AddItem "ç½®æ›ï¼ˆå®Œå…¨ç½®æ›ï¼‰"
+        cmbSequencePosition.ListIndex = 0 ' ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ãƒ—ãƒ¬ãƒ•ã‚£ãƒƒã‚¯ã‚¹
     End If
     
-    ' ƒfƒtƒHƒ‹ƒg’l‚Ìİ’è
+    ' ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆå€¤ã®è¨­å®š
     If ControlExists("txtSequenceStart") Then txtSequenceStart.Text = "1"
     If ControlExists("txtSequenceSpan") Then txtSequenceSpan.Text = "1"
     If ControlExists("txtSequenceDigits") Then txtSequenceDigits.Text = "2"
 End Sub
 
 Private Function GetNewSheetName(oldName As String) As String
-    ' ‘I‘ğ‚³‚ê‚½•û–@‚ÉŠî‚Ã‚¢‚ÄV‚µ‚¢ƒV[ƒg–¼‚ğ¶¬
+    ' é¸æŠã•ã‚ŒãŸæ–¹æ³•ã«åŸºã¥ã„ã¦æ–°ã—ã„ã‚·ãƒ¼ãƒˆåã‚’ç”Ÿæˆ
     Dim newName As String
     
     If optIndividual.value Then
-        ' ŒÂ•Êw’è - ‚Æ‚è‚ ‚¦‚¸Œ³‚Ì–¼‘O‚ğ•Ô‚·iŒã‚Å•ÒW‰Â”\j
+        ' å€‹åˆ¥æŒ‡å®š - ã¨ã‚Šã‚ãˆãšå…ƒã®åå‰ã‚’è¿”ã™ï¼ˆå¾Œã§ç·¨é›†å¯èƒ½ï¼‰
         newName = oldName
         
     ElseIf optReplace.value Then
-        ' ’uŠ·
+        ' ç½®æ›
         newName = Replace(oldName, txtFind.Text, txtReplace.Text)
         
     ElseIf optPrefix.value Then
-        ' ƒvƒŒƒtƒBƒbƒNƒX’Ç‰Á
+        ' ãƒ—ãƒ¬ãƒ•ã‚£ãƒƒã‚¯ã‚¹è¿½åŠ 
         newName = txtPrefix.Text & oldName
         
     ElseIf optSuffix.value Then
-        ' ƒTƒtƒBƒbƒNƒX’Ç‰Á
+        ' ã‚µãƒ•ã‚£ãƒƒã‚¯ã‚¹è¿½åŠ 
         newName = oldName & txtSuffix.Text
         
     ElseIf ControlExists("optSequence") And optSequence.value Then
-        ' ˜A”Ô’Ç‰ÁiƒRƒ“ƒgƒ[ƒ‹‚ª‘¶İ‚·‚éê‡‚Ì‚İj
+        ' é€£ç•ªè¿½åŠ ï¼ˆã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ãŒå­˜åœ¨ã™ã‚‹å ´åˆã®ã¿ï¼‰
         newName = GetSequenceName(oldName)
     Else
-        ' ƒfƒtƒHƒ‹ƒgi•ÏX‚È‚µj
+        ' ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆï¼ˆå¤‰æ›´ãªã—ï¼‰
         newName = oldName
     End If
     
@@ -256,7 +256,7 @@ Private Function GetNewSheetName(oldName As String) As String
 End Function
 
 Private Function GetSequenceName(oldName As String) As String
-    ' ˜A”Ô‚ğ¶¬‚µ‚ÄƒV[ƒg–¼‚ğì¬
+    ' é€£ç•ªã‚’ç”Ÿæˆã—ã¦ã‚·ãƒ¼ãƒˆåã‚’ä½œæˆ
     Dim sequenceText As String
     Dim newName As String
     Dim startNum As Integer
@@ -264,7 +264,7 @@ Private Function GetSequenceName(oldName As String) As String
     Dim digitCount As Integer
     Dim currentValue As Integer
     
-    ' ŠJn”Ô†‚ÆƒXƒpƒ“‚Ìæ“¾
+    ' é–‹å§‹ç•ªå·ã¨ã‚¹ãƒ‘ãƒ³ã®å–å¾—
     startNum = 1
     spanNum = 1
     
@@ -280,16 +280,16 @@ Private Function GetSequenceName(oldName As String) As String
         End If
     End If
     
-    ' Œ»İ’l‚ğŒvZFŠJn”Ô† + (ƒJƒEƒ“ƒ^[ - 1) ~ ƒXƒpƒ“
+    ' ç¾åœ¨å€¤ã‚’è¨ˆç®—ï¼šé–‹å§‹ç•ªå· + (ã‚«ã‚¦ãƒ³ã‚¿ãƒ¼ - 1) Ã— ã‚¹ãƒ‘ãƒ³
     currentValue = startNum + (sequenceCounter - 1) * spanNum
     
-    ' ˜A”Ô•¶š—ñ‚ğ¶¬
+    ' é€£ç•ªæ–‡å­—åˆ—ã‚’ç”Ÿæˆ
     Select Case cmbSequenceType.ListIndex
-        Case 0 ' ”š (1, 2, 3...)
+        Case 0 ' æ•°å­— (1, 2, 3...)
             sequenceText = CStr(currentValue)
             
-        Case 1 ' ”šƒ[ƒƒpƒfƒBƒ“ƒO (01, 02, 03...)
-            digitCount = 2 ' ƒfƒtƒHƒ‹ƒg’l
+        Case 1 ' æ•°å­—ã‚¼ãƒ­ãƒ‘ãƒ‡ã‚£ãƒ³ã‚° (01, 02, 03...)
+            digitCount = 2 ' ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆå€¤
             If ControlExists("txtSequenceDigits") Then
                 If IsNumeric(txtSequenceDigits.Text) Then
                     digitCount = Val(txtSequenceDigits.Text)
@@ -298,39 +298,39 @@ Private Function GetSequenceName(oldName As String) As String
             If digitCount < 1 Then digitCount = 2
             sequenceText = Format(currentValue, String(digitCount, "0"))
             
-        Case 2 ' ¬•¶šƒAƒ‹ƒtƒ@ƒxƒbƒg (a, b, c...)
+        Case 2 ' å°æ–‡å­—ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆ (a, b, c...)
             sequenceText = GetExcelColumnName(currentValue, False)
             
-        Case 3 ' ‘å•¶šƒAƒ‹ƒtƒ@ƒxƒbƒg (A, B, C...)
+        Case 3 ' å¤§æ–‡å­—ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆ (A, B, C...)
             sequenceText = GetExcelColumnName(currentValue, True)
             
         Case Else
             sequenceText = CStr(currentValue)
     End Select
     
-    ' ˆÊ’u‚É‰‚¶‚ÄƒV[ƒg–¼‚ğ¶¬
+    ' ä½ç½®ã«å¿œã˜ã¦ã‚·ãƒ¼ãƒˆåã‚’ç”Ÿæˆ
     Select Case cmbSequencePosition.ListIndex
-        Case 0 ' ƒvƒŒƒtƒBƒbƒNƒXiæ“ªj
+        Case 0 ' ãƒ—ãƒ¬ãƒ•ã‚£ãƒƒã‚¯ã‚¹ï¼ˆå…ˆé ­ï¼‰
             newName = sequenceText & oldName
             
-        Case 1 ' ƒTƒtƒBƒbƒNƒXi––”öj
+        Case 1 ' ã‚µãƒ•ã‚£ãƒƒã‚¯ã‚¹ï¼ˆæœ«å°¾ï¼‰
             newName = oldName & sequenceText
             
-        Case 2 ' ’uŠ·iŠ®‘S’uŠ·j
+        Case 2 ' ç½®æ›ï¼ˆå®Œå…¨ç½®æ›ï¼‰
             newName = sequenceText
             
         Case Else
             newName = sequenceText & oldName
     End Select
     
-    ' ƒJƒEƒ“ƒ^[‚ğ‘‰Á
+    ' ã‚«ã‚¦ãƒ³ã‚¿ãƒ¼ã‚’å¢—åŠ 
     sequenceCounter = sequenceCounter + 1
     
     GetSequenceName = newName
 End Function
 
 Private Function GetExcelColumnName(columnNumber As Integer, isUpperCase As Boolean) As String
-    ' Excel‚Ì—ñ–¼‚Æ“¯—l‚ÌƒAƒ‹ƒtƒ@ƒxƒbƒg•\Œ»‚ğ¶¬
+    ' Excelã®åˆ—åã¨åŒæ§˜ã®ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆè¡¨ç¾ã‚’ç”Ÿæˆ
     ' 1:A, 2:B, ..., 26:Z, 27:AA, 28:AB, ...
     Dim result As String
     Dim tempNum As Integer
@@ -345,7 +345,7 @@ Private Function GetExcelColumnName(columnNumber As Integer, isUpperCase As Bool
     tempNum = columnNumber
     
     Do
-        tempNum = tempNum - 1 ' 0ƒx[ƒX‚É•ÏŠ·
+        tempNum = tempNum - 1 ' 0ãƒ™ãƒ¼ã‚¹ã«å¤‰æ›
         result = Chr(Asc(baseChar) + (tempNum Mod 26)) & result
         tempNum = tempNum \ 26
     Loop While tempNum > 0
@@ -354,22 +354,21 @@ Private Function GetExcelColumnName(columnNumber As Integer, isUpperCase As Bool
 End Function
 
 Private Sub EnableIndividualEdit()
-    ' ŒÂ•Êw’èƒ‚[ƒh‚ÅƒvƒŒƒrƒ…[ƒŠƒXƒg‚ğ•ÒW‰Â”\‚É‚·‚é
-    ' iÀ‘•ŠÈ—ª‰»‚Ì‚½‚ßAInputBox‚ğg—pj
-    MsgBox "ŒÂ•Êw’èƒ‚[ƒh‚Å‚ÍAÀs‚ÉŠeƒV[ƒg‚ÌV‚µ‚¢–¼‘O‚ğŒÂ•Ê‚É“ü—Í‚Å‚«‚Ü‚·B", vbInformation
+    ' å€‹åˆ¥æŒ‡å®šãƒ¢ãƒ¼ãƒ‰ã§ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ãƒªã‚¹ãƒˆã‚’ç·¨é›†å¯èƒ½ã«ã™ã‚‹
+    MsgBox "å€‹åˆ¥æŒ‡å®šãƒ¢ãƒ¼ãƒ‰ã§ã¯ã€å®Ÿè¡Œæ™‚ã«å„ã‚·ãƒ¼ãƒˆã®æ–°ã—ã„åå‰ã‚’å€‹åˆ¥ã«å…¥åŠ›ã§ãã¾ã™ã€‚", vbInformation
 End Sub
 
 Private Sub btnExecute_Click()
-    ' •ÏX‚ğÀs
+    ' å¤‰æ›´ã‚’å®Ÿè¡Œ
     If lstPreview.ListCount = 0 Then
-        MsgBox "‚Ü‚¸ƒvƒŒƒrƒ…[‚ğ¶¬‚µ‚Ä‚­‚¾‚³‚¢B", vbExclamation
+        MsgBox "ã¾ãšãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ã‚’ç”Ÿæˆã—ã¦ãã ã•ã„ã€‚", vbExclamation
         Exit Sub
     End If
     
-    ' Šm”FƒƒbƒZ[ƒW
+    ' ç¢ºèªãƒ¡ãƒƒã‚»ãƒ¼ã‚¸
     Dim result As VbMsgBoxResult
-    result = MsgBox("‘I‘ğ‚³‚ê‚½ƒV[ƒg–¼‚ğ•ÏX‚µ‚Ü‚·‚©H" & vbCrLf & _
-                    "‚±‚Ì‘€ì‚ÍŒ³‚É–ß‚¹‚Ü‚¹‚ñB", vbYesNo + vbQuestion)
+    result = MsgBox("é¸æŠã•ã‚ŒãŸã‚·ãƒ¼ãƒˆåã‚’å¤‰æ›´ã—ã¾ã™ã‹ï¼Ÿ" & vbCrLf & _
+                    "ã“ã®æ“ä½œã¯å…ƒã«æˆ»ã›ã¾ã›ã‚“ã€‚", vbYesNo + vbQuestion)
     
     If result = vbYes Then
         Call ExecuteRename
@@ -377,7 +376,7 @@ Private Sub btnExecute_Click()
 End Sub
 
 Private Sub ExecuteRename()
-    ' ÀÛ‚ÉƒV[ƒg–¼‚ğ•ÏX
+    ' å®Ÿéš›ã«ã‚·ãƒ¼ãƒˆåã‚’å¤‰æ›´
     Dim i As Integer
     Dim oldName As String
     Dim newName As String
@@ -391,7 +390,7 @@ Private Sub ExecuteRename()
     
     Application.ScreenUpdating = False
     
-    ' ˜A”Ôƒ‚[ƒh‚Ìê‡AƒJƒEƒ“ƒ^[‚ğƒŠƒZƒbƒg
+    ' é€£ç•ªãƒ¢ãƒ¼ãƒ‰ã®å ´åˆã€ã‚«ã‚¦ãƒ³ã‚¿ãƒ¼ã‚’ãƒªã‚»ãƒƒãƒˆ
     If ControlExists("optSequence") And optSequence.value Then
         Call ResetSequenceCounter
     End If
@@ -402,38 +401,38 @@ Private Sub ExecuteRename()
         If lstSheets.Selected(i) Then
             oldName = lstSheets.List(i)
             
-            ' ŒÂ•Êw’èƒ‚[ƒh‚Ìê‡AV‚µ‚¢–¼‘O‚ğ“ü—Í‚µ‚Ä‚à‚ç‚¤
+            ' å€‹åˆ¥æŒ‡å®šãƒ¢ãƒ¼ãƒ‰ã®å ´åˆã€æ–°ã—ã„åå‰ã‚’å…¥åŠ›ã—ã¦ã‚‚ã‚‰ã†
             If optIndividual.value Then
-                newName = InputBox("V‚µ‚¢ƒV[ƒg–¼‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢:", "ƒV[ƒg–¼•ÏX", oldName)
+                newName = InputBox("æ–°ã—ã„ã‚·ãƒ¼ãƒˆåã‚’å…¥åŠ›ã—ã¦ãã ã•ã„:", "ã‚·ãƒ¼ãƒˆåå¤‰æ›´", oldName)
                 If newName = "" Or newName = oldName Then
-                    skipFlag = True ' ƒXƒLƒbƒv
+                    skipFlag = True ' ã‚¹ã‚­ãƒƒãƒ—
                 End If
             Else
                 newName = GetNewSheetName(oldName)
             End If
             
-            ' ƒXƒLƒbƒvƒtƒ‰ƒO‚ğƒ`ƒFƒbƒN
+            ' ã‚¹ã‚­ãƒƒãƒ—ãƒ•ãƒ©ã‚°ã‚’ãƒã‚§ãƒƒã‚¯
             If Not skipFlag Then
-                ' ƒV[ƒg–¼‚Ì—LŒø«ƒ`ƒFƒbƒN
+                ' ã‚·ãƒ¼ãƒˆåã®æœ‰åŠ¹æ€§ãƒã‚§ãƒƒã‚¯
                 If Not IsValidSheetName(newName) Then
-                    MsgBox "–³Œø‚ÈƒV[ƒg–¼‚Å‚·: " & newName & vbCrLf & _
-                           "ˆÈ‰º‚Ì•¶š‚Íg—p‚Å‚«‚Ü‚¹‚ñ: \ / ? * [ ] :", vbExclamation
+                    MsgBox "ç„¡åŠ¹ãªã‚·ãƒ¼ãƒˆåã§ã™: " & newName & vbCrLf & _
+                           "ä»¥ä¸‹ã®æ–‡å­—ã¯ä½¿ç”¨ã§ãã¾ã›ã‚“: \ / ? * [ ] :", vbExclamation
                     errorCount = errorCount + 1
                     skipFlag = True
                 End If
             End If
             
             If Not skipFlag Then
-                ' d•¡ƒ`ƒFƒbƒN
+                ' é‡è¤‡ãƒã‚§ãƒƒã‚¯
                 If sheetExists(newName) And newName <> oldName Then
-                    MsgBox "“¯–¼‚ÌƒV[ƒg‚ªŠù‚É‘¶İ‚µ‚Ü‚·: " & newName, vbExclamation
+                    MsgBox "åŒåã®ã‚·ãƒ¼ãƒˆãŒæ—¢ã«å­˜åœ¨ã—ã¾ã™: " & newName, vbExclamation
                     errorCount = errorCount + 1
                     skipFlag = True
                 End If
             End If
             
             If Not skipFlag Then
-                ' ƒV[ƒg–¼•ÏX
+                ' ã‚·ãƒ¼ãƒˆåå¤‰æ›´
                 On Error Resume Next
                 Set ws = ActiveWorkbook.Worksheets(oldName)
                 ws.Name = newName
@@ -442,8 +441,8 @@ Private Sub ExecuteRename()
                     successCount = successCount + 1
                 Else
                     errorCount = errorCount + 1
-                    MsgBox "ƒV[ƒg–¼‚Ì•ÏX‚É¸”s‚µ‚Ü‚µ‚½: " & oldName & " ¨ " & newName & vbCrLf & _
-                           "ƒGƒ‰[: " & Err.description, vbExclamation
+                    MsgBox "ã‚·ãƒ¼ãƒˆåã®å¤‰æ›´ã«å¤±æ•—ã—ã¾ã—ãŸ: " & oldName & " â†’ " & newName & vbCrLf & _
+                           "ã‚¨ãƒ©ãƒ¼: " & Err.description, vbExclamation
                     Err.Clear
                 End If
                 On Error GoTo 0
@@ -453,36 +452,36 @@ Private Sub ExecuteRename()
     
     Application.ScreenUpdating = True
     
-    ' Œ‹‰Ê•ñ
-    MsgBox "ˆ—Š®—¹" & vbCrLf & _
-           "¬Œ÷: " & successCount & " Œ" & vbCrLf & _
-           "¸”s: " & errorCount & " Œ", vbInformation
+    ' çµæœå ±å‘Š
+    MsgBox "å‡¦ç†å®Œäº†" & vbCrLf & _
+           "æˆåŠŸ: " & successCount & " ä»¶" & vbCrLf & _
+           "å¤±æ•—: " & errorCount & " ä»¶", vbInformation
     
-    ' ƒV[ƒgˆê——‚ğXV
+    ' ã‚·ãƒ¼ãƒˆä¸€è¦§ã‚’æ›´æ–°
     Call LoadSheetList
     lstPreview.Clear
 End Sub
 
 Private Function IsValidSheetName(sheetName As String) As Boolean
-    ' ƒV[ƒg–¼‚Ì—LŒø«‚ğƒ`ƒFƒbƒN
+    ' ã‚·ãƒ¼ãƒˆåã®æœ‰åŠ¹æ€§ã‚’ãƒã‚§ãƒƒã‚¯
     Dim invalidChars As String
     Dim i As Integer
     
     invalidChars = "\/?*[]:"
     
-    ' ‹ó•¶šƒ`ƒFƒbƒN
+    ' ç©ºæ–‡å­—ãƒã‚§ãƒƒã‚¯
     If Trim(sheetName) = "" Then
         IsValidSheetName = False
         Exit Function
     End If
     
-    ' ’·‚³ƒ`ƒFƒbƒNiExcel‚Í31•¶š‚Ü‚Åj
+    ' é•·ã•ãƒã‚§ãƒƒã‚¯ï¼ˆExcelã¯31æ–‡å­—ã¾ã§ï¼‰
     If Len(sheetName) > 31 Then
         IsValidSheetName = False
         Exit Function
     End If
     
-    ' –³Œø•¶šƒ`ƒFƒbƒN
+    ' ç„¡åŠ¹æ–‡å­—ãƒã‚§ãƒƒã‚¯
     For i = 1 To Len(invalidChars)
         If InStr(sheetName, Mid(invalidChars, i, 1)) > 0 Then
             IsValidSheetName = False
@@ -494,7 +493,7 @@ Private Function IsValidSheetName(sheetName As String) As Boolean
 End Function
 
 Private Function sheetExists(sheetName As String) As Boolean
-    ' w’è‚³‚ê‚½ƒV[ƒg‚ª‘¶İ‚·‚é‚©ƒ`ƒFƒbƒN
+    ' æŒ‡å®šã•ã‚ŒãŸã‚·ãƒ¼ãƒˆãŒå­˜åœ¨ã™ã‚‹ã‹ãƒã‚§ãƒƒã‚¯
     Dim ws As Worksheet
     
     On Error Resume Next
@@ -504,11 +503,11 @@ Private Function sheetExists(sheetName As String) As Boolean
 End Function
 
 Private Sub btnCancel_Click()
-    ' ƒtƒH[ƒ€‚ğ•Â‚¶‚é
+    ' ãƒ•ã‚©ãƒ¼ãƒ ã‚’é–‰ã˜ã‚‹
     Unload Me
 End Sub
 
-' ƒeƒLƒXƒgƒ{ƒbƒNƒXEƒRƒ“ƒ{ƒ{ƒbƒNƒX‚Ì•ÏXƒCƒxƒ“ƒgi©“®ƒvƒŒƒrƒ…[XVj
+' ãƒ†ã‚­ã‚¹ãƒˆãƒœãƒƒã‚¯ã‚¹ãƒ»ã‚³ãƒ³ãƒœãƒœãƒƒã‚¯ã‚¹ã®å¤‰æ›´ã‚¤ãƒ™ãƒ³ãƒˆï¼ˆè‡ªå‹•ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼æ›´æ–°ï¼‰
 Private Sub txtFind_Change()
     If optReplace.value And txtFind.Text <> "" And txtReplace.Text <> "" Then
         Call GeneratePreview
@@ -533,7 +532,7 @@ Private Sub txtSuffix_Change()
     End If
 End Sub
 
-' ˜A”ÔŠÖ˜A‚Ì•ÏXƒCƒxƒ“ƒg
+' é€£ç•ªé–¢é€£ã®å¤‰æ›´ã‚¤ãƒ™ãƒ³ãƒˆ
 Private Sub cmbSequenceType_Change()
     If ControlExists("optSequence") And optSequence.value Then
         Call GeneratePreview
@@ -564,11 +563,7 @@ Private Sub txtSequenceDigits_Change()
     End If
 End Sub
 
-' =============================================================================
-' ƒ†[ƒeƒBƒŠƒeƒBŠÖ”
-' =============================================================================
-
-' ‘I‘ğ‚³‚ê‚½ƒV[ƒg‚ÌƒoƒbƒNƒAƒbƒv‚ğì¬
+' é¸æŠã•ã‚ŒãŸã‚·ãƒ¼ãƒˆã®ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—ã‚’ä½œæˆ
 Sub CreateSheetBackup()
     Dim ws As Worksheet
     Dim backupWb As Workbook
@@ -581,14 +576,15 @@ Sub CreateSheetBackup()
         ws.Copy After:=backupWb.Sheets(backupWb.Sheets.count)
     Next ws
     
-    ' Å‰‚Ì‹óƒV[ƒg‚ğíœ
+    ' æœ€åˆã®ç©ºã‚·ãƒ¼ãƒˆã‚’å‰Šé™¤
     Application.DisplayAlerts = False
     backupWb.Sheets(1).Delete
     Application.DisplayAlerts = True
     
-    backupWb.SaveAs ThisWorkbook.Path & "\ƒV[ƒg–¼•ÏX‘OƒoƒbƒNƒAƒbƒv_" & _
+    backupWb.SaveAs ThisWorkbook.Path & "\ã‚·ãƒ¼ãƒˆåå¤‰æ›´å‰ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—_" & _
                     Format(Now, "yyyymmdd_hhmmss") & ".xlsx"
     
-    MsgBox "ƒoƒbƒNƒAƒbƒv‚ğì¬‚µ‚Ü‚µ‚½: " & backupWb.Name, vbInformation
+    MsgBox "ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—ã‚’ä½œæˆã—ã¾ã—ãŸ: " & backupWb.Name, vbInformation
 End Sub
+
 
