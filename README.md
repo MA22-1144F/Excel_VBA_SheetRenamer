@@ -9,16 +9,16 @@ PERSONAL.XLSBに保存して動作させることを想定しています。
 Microsoft Excel上で動作します。  
 
 ## インストール方法
-1. Contentsフォルダ内のUserForm_SheetRenamer.frm、UserForm_SheetRenamer.frx、シート名一括変更.basを任意の同一フォルダに保存
+1. Contentsフォルダ内の UserForm_SheetRenamer.frm、UserForm_SheetRenamer.frx、シート名一括変更.bas を任意の同一フォルダに保存
 2. Excelで新規WorkSheetを開く
 3. 開発タブのVisual BasicまたはAlt+F11でVBE(Visual Basic Editor)を開く
-4. VBAProject一覧からVBAProject (PERSONAL.XLSB)を選択し右クリック
-5. ファイルのインポートで保存したUserForm_SheetRenamer.frmを開く
-6. 加えてファイルのインポートで保存したシート名一括変更.basを開く
+4. VBAProject一覧から VBAProject (PERSONAL.XLSB) を選択し右クリック
+5. ファイルのインポートで保存した UserForm_SheetRenamer.frm を開く
+6. 加えてファイルのインポートで保存した シート名一括変更.bas を開く
 7. 上書き保存ボタンまたはCtrl+Sで保存
 以下オプション設定  
 8. 任意のExcel WorkSheetに戻り、ファイル→オプション→リボンのユーザー設定の順で遷移
-9. 任意のユーザー設定グループ(無ければ新規作成)にPERSONAL.XLSB!起動_シート名一括変更のマクロを追加
+9. 任意のユーザー設定グループ(無ければ新規作成)に PERSONAL.XLSB!起動_シート名一括変更 のマクロを追加
 10. お好みで名前やアイコンを変更
 11. Excel WorkSheetに戻り、設定したマクロのアイコンを選択して起動
 
