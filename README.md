@@ -37,8 +37,5 @@ Microsoft Excel上で動作します。
 * プレビュー機能  
   変更内容を実行前に確認可能
 
-## 連絡先
-[Instagram](https://www.instagram.com/nattotoasto?igsh=NWNtdHhnY3A4NDQ0 "nattotoasto")
-
 ## ライセンス
 MIT License
